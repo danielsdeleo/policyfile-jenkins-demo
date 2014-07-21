@@ -1,0 +1,94 @@
+{
+  "name": "jenkins",
+  "run_list": ["recipe[java::default]","recipe[jenkins::master]","recipe[policyfile_demo::default]"],
+  "cookbook_locks": {
+    "policyfile_demo": {
+      "version": "0.1.0",
+      "identifier": "5d6ea32c9495698e989b4c39890181828ef34b99",
+      "dotted_decimal_identifier": "26298819940750697.40137239459105025.142397744040857",
+      "source": "cookbooks/policyfile_demo",
+      "cache_key": null,
+      "scm_info": null,
+      "source_options": {
+        "path": "cookbooks/policyfile_demo"
+      }
+    },
+    "java": {
+      "version": "1.22.0",
+      "identifier": "1420456b84d462bad4af30cbb4f605a7375914ed",
+      "dotted_decimal_identifier": "5664982062912610.52588194571203830.6215746262253",
+      "cache_key": "java-1.22.0-supermarket.getchef.com",
+      "origin": "https://supermarket.getchef.com/api/v1/cookbooks/java/versions/1.22.0/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.getchef.com/api/v1/cookbooks/java/versions/1.22.0/download",
+        "version": "1.22.0"
+      }
+    },
+    "jenkins": {
+      "version": "2.1.2",
+      "identifier": "f5d46bcd27b09c6b36258c0630d6f56878138367",
+      "dotted_decimal_identifier": "69194928762630300.30177357398946006.269829039948647",
+      "cache_key": "jenkins-2.1.2-supermarket.getchef.com",
+      "origin": "https://supermarket.getchef.com/api/v1/cookbooks/jenkins/versions/2.1.2/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.getchef.com/api/v1/cookbooks/jenkins/versions/2.1.2/download",
+        "version": "2.1.2"
+      }
+    },
+    "apt": {
+      "version": "2.4.0",
+      "identifier": "a3c597383514bb9a713a8f58f165dd8f1c0e1b1b",
+      "dotted_decimal_identifier": "46097674477573307.43471642740453733.243606720748315",
+      "cache_key": "apt-2.4.0-supermarket.getchef.com",
+      "origin": "https://supermarket.getchef.com/api/v1/cookbooks/apt/versions/2.4.0/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.getchef.com/api/v1/cookbooks/apt/versions/2.4.0/download",
+        "version": "2.4.0"
+      }
+    },
+    "runit": {
+      "version": "1.5.10",
+      "identifier": "b400659bdfdc3a8257b570ff41c091db3cff46d4",
+      "dotted_decimal_identifier": "50665932214754362.36688183768859072.160370807228116",
+      "cache_key": "runit-1.5.10-supermarket.getchef.com",
+      "origin": "https://supermarket.getchef.com/api/v1/cookbooks/runit/versions/1.5.10/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.getchef.com/api/v1/cookbooks/runit/versions/1.5.10/download",
+        "version": "1.5.10"
+      }
+    },
+    "build-essential": {
+      "version": "2.0.4",
+      "identifier": "ef57f95332fd265da0c7dcf4c56e329f77f044b4",
+      "dotted_decimal_identifier": "67369247788170534.26353953100055918.55660493423796",
+      "cache_key": "build-essential-2.0.4-supermarket.getchef.com",
+      "origin": "https://supermarket.getchef.com/api/v1/cookbooks/build-essential/versions/2.0.4/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.getchef.com/api/v1/cookbooks/build-essential/versions/2.0.4/download",
+        "version": "2.0.4"
+      }
+    },
+    "yum-epel": {
+      "version": "0.3.6",
+      "identifier": "d70e9760c1baffc86e6d93bf618155f4f225ba28",
+      "dotted_decimal_identifier": "60533163318950655.56416412251414913.94510522939944",
+      "cache_key": "yum-epel-0.3.6-supermarket.getchef.com",
+      "origin": "https://supermarket.getchef.com/api/v1/cookbooks/yum-epel/versions/0.3.6/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.getchef.com/api/v1/cookbooks/yum-epel/versions/0.3.6/download",
+        "version": "0.3.6"
+      }
+    },
+    "yum": {
+      "version": "3.2.2",
+      "identifier": "7d9f92ed80e5c41303254cf4e71e6ea260efcea3",
+      "dotted_decimal_identifier": "35359825487521220.5351483297294110.121643690086051",
+      "cache_key": "yum-3.2.2-supermarket.getchef.com",
+      "origin": "https://supermarket.getchef.com/api/v1/cookbooks/yum/versions/3.2.2/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.getchef.com/api/v1/cookbooks/yum/versions/3.2.2/download",
+        "version": "3.2.2"
+      }
+    }
+  }
+}
