@@ -1,0 +1,5 @@
+#!/bin/sh
+
+mkdir chef-zero-cache
+cd chef-zero-cache
+knife serve -c ../etc/zero.rb --chef-repo-path . -VV
