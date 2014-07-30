@@ -10,8 +10,9 @@ end
 
 require 'json'
 require 'chef-dk'
+require 'chef-dk/authenticated_http'
 require 'chef-dk/policyfile_compiler'
-require 'chef-dk/lockfile_uploader'
+require 'chef-dk/policyfile/uploader'
 
 $hax_mode = true
 
@@ -25,6 +26,10 @@ Chef::Config.from_file(CHEF_CONFIG_PATH)
 
 # Chef Zero:
 Chef::Config.chef_server_url = "http://localhost:8889"
+
+c = Chef::Config
+
+http_client = ChefDK::AuthenticatedHTTP.new(c.chef_server_url, signing_key_filename: c.client_key, client_name: c.node_name)
 
 Chef::Log.init(STDERR)
 Chef::Log.level = :info
@@ -40,5 +45,5 @@ policy_data = JSON.parse(IO.read(lockfile_path))
 storage_config = ChefDK::Policyfile::StorageConfig.new.use_policyfile_lock(lockfile_path)
 policy_lock = ChefDK::PolicyfileLock.new(storage_config).build_from_lock_data(policy_data)
 
-ChefDK::LockfileUploader.new(policy_lock, POLICY_GROUP).upload
+ChefDK::Policyfile::Uploader.new(policy_lock, POLICY_GROUP, http_client: http_client).upload
 
