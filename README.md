@@ -78,6 +78,6 @@ Chef::Cookbook::FileVendor.on_create { |manifest| Chef::Cookbook::RemoteFileVend
 A fix for this is in master, but wasn't released with 11.16.x
 
 
-Now run `chef-client` and 
+Now run `chef-client`, it will create a working Jenkins master for you.
 
 
