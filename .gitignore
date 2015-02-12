@@ -8,7 +8,6 @@ Berksfile.lock
 *.un~
 
 # Bundler
-Gemfile.lock
 .bundle/*
 
 .kitchen/
