@@ -1,5 +1,42 @@
-#!/bin/sh
+#!/usr/bin/env ruby
 
-mkdir chef-zero-cache
-cd chef-zero-cache
-knife serve -c ../etc/zero.rb --chef-repo-path . -VV
+# This used to be a shell script that did:
+
+#     mkdir chef-zero-cache
+#     cd chef-zero-cache
+#     knife serve -c ../etc/zero.rb --chef-repo-path . -VV
+#
+# But that uses ChefFS which requires reimplementing the disk based data
+# storage and sucks.
+
+require 'pp'
+require 'fileutils'
+require 'chef_zero/server'
+require 'chef_zero/data_store/raw_file_store'
+
+ROOT = File.expand_path('../..', __FILE__)
+
+pp root: ROOT
+
+CHEF_ZERO_DIR = File.join(ROOT, 'chef-zero-cache')
+
+pp chef_zero_dir: CHEF_ZERO_DIR
+
+FileUtils.mkdir(CHEF_ZERO_DIR) unless File.directory?(CHEF_ZERO_DIR)
+
+
+data_store = ChefZero::DataStore::RawFileStore.new(CHEF_ZERO_DIR, true)
+data_store = ChefZero::DataStore::DefaultFacade.new(data_store, true, false)
+
+data_store.create_dir([ 'organizations' ], 'demo-org')
+
+# Chef Zero bug where missing container dirs triggers a 404 when doing a GET to
+# the 'container' URL, e.g., GET BASE_URL/cookbooks gives 404 instead of empty list
+data_store.create_dir([ 'organizations', 'demo-org' ], 'cookbook_artifacts')
+
+server_opts =  { :port => 8889, :single_org => 'demo-org', :data_store => data_store }
+server_opts[:log_level] = :debug #if ENV['DEBUG_ZERO']
+
+server = ChefZero::Server.new(server_opts)
+server.start(true)
+
