@@ -1,4 +1,4 @@
-policy_document_native_api true
+#policy_document_native_api true
 versioned_cookbooks true
 
 chef_server_url "https://192.168.99.144/organizations/ecs"

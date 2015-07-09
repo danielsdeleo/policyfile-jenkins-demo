@@ -1,0 +1,3 @@
+Dir.glob('/Users/ddeleo/oc/policyfile_demo/etc/vms/*.vm') do |vm_file|
+  eval(IO.read(vm_file), nil, vm_file)
+end
