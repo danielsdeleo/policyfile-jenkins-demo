@@ -1,5 +1,5 @@
 {
-  "revision_id": "c565b4aa853757ad55194cb53fe9cd0837be21b374e24eab3bb96e73d4b56e56",
+  "revision_id": "79412c859e52b05caac55e84be9a23d7b195ce093e8290c98e523c34cf386549",
   "name": "jenkins",
   "run_list": [
     "recipe[apt::default]",
@@ -14,16 +14,49 @@
     ]
   },
   "cookbook_locks": {
+    "apt": {
+      "version": "2.9.2",
+      "identifier": "aa7652cc9ec61ee4603d984cb5770169987ae0ea",
+      "dotted_decimal_identifier": "47980844033164830.64282112354465143.1553041383658",
+      "cache_key": "apt-2.9.2-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/apt/versions/2.9.2/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/apt/versions/2.9.2/download",
+        "version": "2.9.2"
+      }
+    },
+    "java": {
+      "version": "1.39.0",
+      "identifier": "2ce7dc5370061bbe465eb36c55c90236e728ea29",
+      "dotted_decimal_identifier": "12639832453940763.53557618126116297.2434829707817",
+      "cache_key": "java-1.39.0-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/java/versions/1.39.0/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/java/versions/1.39.0/download",
+        "version": "1.39.0"
+      }
+    },
+    "jenkins": {
+      "version": "2.4.1",
+      "identifier": "9d79c8cf3832e31c19f29ea978a25923293ca1a2",
+      "dotted_decimal_identifier": "44325474720559843.7909829182584994.98007550566818",
+      "cache_key": "jenkins-2.4.1-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/jenkins/versions/2.4.1/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/jenkins/versions/2.4.1/download",
+        "version": "2.4.1"
+      }
+    },
     "policyfile_demo": {
       "version": "0.1.0",
-      "identifier": "ea96c99da079db9ff3cb22601638fabd5df49599",
-      "dotted_decimal_identifier": "66030937227426267.45022575077627448.275691232073113",
+      "identifier": "c117446b3b9dc77a33ae0b4a391e9f219f7d168a",
+      "dotted_decimal_identifier": "54350253129440711.34396769765439774.174966758512266",
       "source": "cookbooks/policyfile_demo",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
-        "remote": "git@github.com:danielsdeleo/policyfile-jenkins-demo.git",
-        "revision": "48d4b425000adbcff33fed70ee93871fec2ccbc3",
+        "remote": null,
+        "revision": "d9dc485ccdf3e52cecd867422575b06874f8fa4f",
         "working_tree_clean": false,
         "published": false,
         "synchronized_remote_branches": [
@@ -34,70 +67,37 @@
         "path": "cookbooks/policyfile_demo"
       }
     },
-    "apt": {
-      "version": "2.7.0",
-      "identifier": "16c57abbd056543f7d5a15dabbb03261024a9c5e",
-      "dotted_decimal_identifier": "6409580415309396.17870749399956400.55392231660638",
-      "cache_key": "apt-2.7.0-supermarket.chef.io",
-      "origin": "https://supermarket.chef.io/api/v1/cookbooks/apt/versions/2.7.0/download",
-      "source_options": {
-        "artifactserver": "https://supermarket.chef.io/api/v1/cookbooks/apt/versions/2.7.0/download",
-        "version": "2.7.0"
-      }
-    },
-    "java": {
-      "version": "1.31.0",
-      "identifier": "9178a38ad3e3baa55b49c1b8d9f4bf6a43dbc358",
-      "dotted_decimal_identifier": "40946515427189690.46543743498115572.210463125914456",
-      "cache_key": "java-1.31.0-supermarket.chef.io",
-      "origin": "https://supermarket.chef.io/api/v1/cookbooks/java/versions/1.31.0/download",
-      "source_options": {
-        "artifactserver": "https://supermarket.chef.io/api/v1/cookbooks/java/versions/1.31.0/download",
-        "version": "1.31.0"
-      }
-    },
-    "jenkins": {
-      "version": "2.3.1",
-      "identifier": "f4c8602d966c782b6c2e2aa8c113684476e08267",
-      "dotted_decimal_identifier": "68900209724648568.12222369538556179.114643261489767",
-      "cache_key": "jenkins-2.3.1-supermarket.chef.io",
-      "origin": "https://supermarket.chef.io/api/v1/cookbooks/jenkins/versions/2.3.1/download",
-      "source_options": {
-        "artifactserver": "https://supermarket.chef.io/api/v1/cookbooks/jenkins/versions/2.3.1/download",
-        "version": "2.3.1"
-      }
-    },
     "runit": {
-      "version": "1.6.0",
-      "identifier": "fd405a401ad2b9de8e0c2af857ebc5feb94a9503",
-      "dotted_decimal_identifier": "71283925474529977.62643627741435883.217697821037827",
-      "cache_key": "runit-1.6.0-supermarket.chef.io",
-      "origin": "https://supermarket.chef.io/api/v1/cookbooks/runit/versions/1.6.0/download",
+      "version": "1.7.6",
+      "identifier": "09d43fad354b3efcc5b5836fef5137131f60f974",
+      "dotted_decimal_identifier": "2766644744375102.71149077515988817.60555270355316",
+      "cache_key": "runit-1.7.6-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/runit/versions/1.7.6/download",
       "source_options": {
-        "artifactserver": "https://supermarket.chef.io/api/v1/cookbooks/runit/versions/1.6.0/download",
-        "version": "1.6.0"
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/runit/versions/1.7.6/download",
+        "version": "1.7.6"
       }
     },
     "yum": {
-      "version": "3.6.0",
-      "identifier": "6840f0ad8b45ba80eb202e1c11a27ce40e2e3221",
-      "dotted_decimal_identifier": "29344800025822650.36287320464036258.137318932296225",
-      "cache_key": "yum-3.6.0-supermarket.chef.io",
-      "origin": "https://supermarket.chef.io/api/v1/cookbooks/yum/versions/3.6.0/download",
+      "version": "3.9.0",
+      "identifier": "7f22c92fefc24600c10bed22e9d417cf905c915f",
+      "dotted_decimal_identifier": "35785569530266182.212256967289300.26180247654751",
+      "cache_key": "yum-3.9.0-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/yum/versions/3.9.0/download",
       "source_options": {
-        "artifactserver": "https://supermarket.chef.io/api/v1/cookbooks/yum/versions/3.6.0/download",
-        "version": "3.6.0"
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/yum/versions/3.9.0/download",
+        "version": "3.9.0"
       }
     },
     "packagecloud": {
-      "version": "0.0.18",
-      "identifier": "01c60abe401a4e63cd15824cc3d9115746b9d1f4",
-      "dotted_decimal_identifier": "499224420555342.28091514958431193.19066546409972",
-      "cache_key": "packagecloud-0.0.18-supermarket.chef.io",
-      "origin": "https://supermarket.chef.io/api/v1/cookbooks/packagecloud/versions/0.0.18/download",
+      "version": "0.1.1",
+      "identifier": "9bf356317cbeff82fab66435d6fec1a04854f190",
+      "dotted_decimal_identifier": "43896172913147647.36867408244627198.212894152454544",
+      "cache_key": "packagecloud-0.1.1-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/packagecloud/versions/0.1.1/download",
       "source_options": {
-        "artifactserver": "https://supermarket.chef.io/api/v1/cookbooks/packagecloud/versions/0.0.18/download",
-        "version": "0.0.18"
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/packagecloud/versions/0.1.1/download",
+        "version": "0.1.1"
       }
     }
   },
@@ -110,42 +110,45 @@
   "solution_dependencies": {
     "Policyfile": [
       [
-        "policyfile_demo",
-        ">= 0.0.0"
-      ],
-      [
         "apt",
-        "= 2.7.0"
+        "= 2.9.2"
       ],
       [
         "java",
-        "= 1.31.0"
+        "= 1.39.0"
       ],
       [
         "jenkins",
-        "= 2.3.1"
+        "= 2.4.1"
+      ],
+      [
+        "policyfile_demo",
+        "= 0.1.0"
       ],
       [
         "runit",
-        "= 1.6.0"
+        "= 1.7.6"
       ],
       [
         "yum",
-        "= 3.6.0"
+        "= 3.9.0"
       ],
       [
         "packagecloud",
-        "= 0.0.18"
+        "= 0.1.1"
       ]
     ],
     "dependencies": {
-      "apt (2.7.0)": [
+      "apt (2.9.2)": [
 
       ],
-      "java (1.31.0)": [
-
+      "java (1.39.0)": [
+        [
+          "apt",
+          ">= 0.0.0"
+        ]
       ],
-      "jenkins (2.3.1)": [
+      "jenkins (2.4.1)": [
         [
           "apt",
           "~> 2.0"
@@ -162,16 +165,16 @@
       "policyfile_demo (0.1.0)": [
 
       ],
-      "runit (1.6.0)": [
+      "runit (1.7.6)": [
         [
           "packagecloud",
           ">= 0.0.0"
         ]
       ],
-      "yum (3.6.0)": [
+      "yum (3.9.0)": [
 
       ],
-      "packagecloud (0.0.18)": [
+      "packagecloud (0.1.1)": [
 
       ]
     }
